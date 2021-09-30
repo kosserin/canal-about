@@ -23,6 +23,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    transform: translateY(-150%);
     animation: show 2s forwards;
 
     @include laptop {
@@ -1310,6 +1311,7 @@ header {
     cursor: auto;
     transition: all 1000ms ease;
     opacity: 1;
+    transform: translateY(0);
 
     @include laptop {
       width: 100%;
@@ -1483,6 +1485,7 @@ header {
   to {
     opacity: 1;
     min-height: 100vh;
+    transform: translateY(0);
   }
 }
 

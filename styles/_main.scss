@@ -24,25 +24,40 @@ body {
       cursor: pointer;
 
       span {
-        transform: rotate(45deg);
-        font-weight: 500;
+        font-size: 2rem;
       }
     }
 
     #section-one {
       background: $white;
+
+      span {
+        transform: rotate(-45deg);
+      }
     }
 
     #section-two {
       background: $blue;
+
+      span {
+        transform: rotate(45deg);
+      }
     }
 
     #section-three {
       background: $pink;
+
+      span {
+        transform: rotate(-120deg);
+      }
     }
 
     #section-four {
       background: $yellow;
+
+      span {
+        transform: rotate(120deg);
+      }
     }
   }
 

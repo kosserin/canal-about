@@ -35,6 +35,8 @@ header section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transform: translateY(-150%);
+          transform: translateY(-150%);
   -webkit-animation: show 2s forwards;
           animation: show 2s forwards;
 }
@@ -1618,6 +1620,8 @@ header section.focused {
   -webkit-transition: all 1000ms ease;
   transition: all 1000ms ease;
   opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 @media screen and (max-width: 1280px) {
@@ -1829,6 +1833,8 @@ header #third.fourth-clicked {
   to {
     opacity: 1;
     min-height: 100vh;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
@@ -1836,6 +1842,8 @@ header #third.fourth-clicked {
   to {
     opacity: 1;
     min-height: 100vh;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
@@ -1943,25 +1951,43 @@ body .mini-sections .mini-section {
 }
 
 body .mini-sections .mini-section span {
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-  font-weight: 500;
+  font-size: 2rem;
 }
 
 body .mini-sections #section-one {
   background: #fff;
 }
 
+body .mini-sections #section-one span {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
 body .mini-sections #section-two {
   background: #5ea3ec;
+}
+
+body .mini-sections #section-two span {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 body .mini-sections #section-three {
   background: #f64444;
 }
 
+body .mini-sections #section-three span {
+  -webkit-transform: rotate(-120deg);
+          transform: rotate(-120deg);
+}
+
 body .mini-sections #section-four {
   background: #ffb400;
+}
+
+body .mini-sections #section-four span {
+  -webkit-transform: rotate(120deg);
+          transform: rotate(120deg);
 }
 
 body .burger-clicked {
