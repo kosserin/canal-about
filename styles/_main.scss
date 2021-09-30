@@ -1,0 +1,114 @@
+body {
+  position: relative;
+
+  .mini-sections {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 5;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 500ms ease;
+
+    .mini-section {
+      width: 50vw;
+      height: 50vh;
+      background: $pink;
+      display: flex;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      span {
+        transform: rotate(45deg);
+        font-weight: 500;
+      }
+    }
+
+    #section-one {
+      background: $white;
+    }
+
+    #section-two {
+      background: $blue;
+    }
+
+    #section-three {
+      background: $pink;
+    }
+
+    #section-four {
+      background: $yellow;
+    }
+  }
+
+  .burger-clicked {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    transition: all 500ms ease;
+  }
+
+  .burger {
+    display: none;
+    @include mini {
+      display: block;
+      cursor: pointer;
+      position: fixed;
+      top: 2vh;
+      right: 10vw;
+      z-index: 20;
+    }
+
+    div {
+      margin: 6px 0;
+      background: $black;
+      width: 30px;
+      height: 2px;
+      border-radius: 5px;
+      transition: all 500ms ease;
+    }
+  }
+
+  .toggle-burger .line1 {
+    transform: rotate(45deg) translate(5px, 5px);
+    height: 1px;
+    transition: all 500ms ease;
+  }
+
+  .toggle-burger .line2 {
+    opacity: 0;
+    transition: all 500ms ease;
+  }
+
+  .toggle-burger .line3 {
+    transform: rotate(-45deg) translate(5px, -5px);
+    height: 1px;
+    transition: all 500ms ease;
+  }
+
+  #fixed-logo {
+    position: fixed;
+    width: 6vw;
+    top: 2vh;
+    left: 5vw;
+    z-index: 5;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    @include mini {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}

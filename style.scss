@@ -1,0 +1,20 @@
+@import "./styles/header";
+@import "./styles/main";
+@import "./styles/colors";
+@import "./styles/media-query";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Dosis", sans-serif;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}

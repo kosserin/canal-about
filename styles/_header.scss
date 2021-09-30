@@ -1,0 +1,1514 @@
+@import "./colors";
+@import "./media-query";
+
+/* HEADER FROM HERE (CONTAINS ALL 4 SECTIONS) */
+
+header {
+  display: flex;
+  position: relative;
+
+  /* SECTION STYLING FROM HERE */
+
+  section {
+    position: fixed;
+    min-height: 0vh;
+    cursor: pointer;
+    transition: all 1000ms ease;
+    width: 3vw;
+    top: 0;
+    padding-top: 100px;
+    transition: all 1000ms ease;
+    text-align: center;
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: show 2s forwards;
+
+    @include laptop {
+      width: 6vw;
+    }
+
+    @include mini {
+      display: none;
+      padding: 0px 5vw 0 5vw;
+      width: 100vw;
+    }
+
+    .letters {
+      position: absolute;
+      top: 5vh;
+      left: 50%;
+      transform: translateX(-50%);
+      writing-mode: horizontal-tb;
+      font-size: 0.9rem;
+
+      @include mini {
+        display: none;
+      }
+    }
+
+    .section-name {
+      letter-spacing: 2px;
+      font-weight: 500;
+      opacity: 1;
+      pointer-events: all;
+      transition: all 500ms ease;
+      -webkit-transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
+      transform: rotate(90deg);
+      position: absolute;
+
+      /* also accepts left, right, top, bottom coordinates; not required, but a good idea for styling */
+      -webkit-transform-origin: 50% 50%;
+      -moz-transform-origin: 50% 50%;
+      -ms-transform-origin: 50% 50%;
+      -o-transform-origin: 50% 50%;
+      transform-origin: 50% 50%;
+
+      /* Should be unset in IE9+ I think. */
+
+      @include mini {
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+    }
+
+    .remove-span {
+      opacity: 0 !important;
+      pointer-events: none !important;
+      transition: all 500ms ease;
+    }
+
+    .section-container {
+      position: relative;
+      left: 0vw;
+      opacity: 0;
+      pointer-events: none;
+      width: 0;
+      height: 0;
+
+      @include miniLaptop {
+        left: 0;
+      }
+
+      @include mini {
+        left: 0;
+        margin: 0 auto;
+        width: 100%;
+        top: 0;
+      }
+
+      .section-title {
+        letter-spacing: 2px;
+        display: inline-block;
+        font-size: 1rem;
+        position: absolute;
+        transform: rotate(90deg);
+        color: rgb(75, 75, 75);
+        top: 10vh;
+        left: 0vw;
+        display: flex;
+        align-items: center;
+
+        i {
+          margin-left: 10px;
+        }
+      }
+
+      .section-first-container {
+        display: flex;
+        justify-content: space-between;
+        text-align: left;
+        margin-right: 11vw;
+        margin-left: 5vw;
+
+        @include laptop {
+          flex-direction: column;
+          margin: 0;
+        }
+
+        .section-heading {
+          width: 70%;
+          margin-top: 150px;
+
+          @include mini {
+            margin-bottom: 50px;
+          }
+
+          h1 {
+            font-size: 8rem;
+            font-weight: 400;
+
+            @include laptop {
+              font-size: 6rem;
+            }
+
+            @include tablet {
+              font-size: 3rem;
+            }
+          }
+        }
+
+        .section-worktime {
+          text-align: right;
+          font-size: 1.1rem;
+          font-weight: 500;
+          .image-worktime {
+            position: relative;
+            margin-top: 50px;
+            width: 400px;
+            height: 500px;
+
+            @include phone {
+              width: 300px;
+              height: 400px;
+            }
+
+            .worktime-letters {
+              position: absolute;
+              top: 0;
+              right: 0;
+              font-size: 4rem;
+              transform: translate(50%, -50%);
+
+              @include tablet {
+                font-size: 2rem;
+                top: auto;
+                bottom: 0;
+                transform: translate(50%, 50%);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .second-grid-container {
+      margin-top: 150px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 80px;
+      margin-bottom: 150px;
+      text-align: left;
+      margin-left: 0;
+
+      @include mini {
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 50px;
+        width: 90vw;
+        margin-left: 0;
+        margin: 150px auto;
+        text-align: center;
+      }
+
+      .grid-item {
+        text-decoration: none;
+        color: $black;
+
+        p {
+          font-weight: 300;
+        }
+
+        h1 {
+          font-weight: 400;
+          margin-top: 20px;
+        }
+      }
+    }
+
+    .second-happy-hour {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 150px;
+      align-items: center;
+      width: 100%;
+      @include miniLaptop {
+        margin-left: 0;
+      }
+
+      @include mini {
+        margin-right: 0;
+        width: 100%;
+        flex-direction: column;
+      }
+
+      img {
+        width: 200px;
+        position: relative;
+        height: 200px;
+
+        @include laptop {
+          width: 130px;
+          height: 130px;
+        }
+      }
+
+      #left-smile {
+        animation: leftSmile 2s linear 2s infinite alternate;
+      }
+
+      #right-smile {
+        animation: rightSmile 2s linear 2s infinite alternate;
+      }
+
+      .happy-hour-text {
+        width: 50%;
+        margin: 0 10px;
+
+        @include mini {
+          width: 80%;
+          margin: 50px 0;
+        }
+
+        h1 {
+          font-size: 8rem;
+          font-weight: 400;
+          line-height: 120px;
+
+          @include laptop {
+            font-size: 4rem;
+            line-height: 60px;
+          }
+
+          @include mini {
+            font-size: 2rem;
+            line-height: 40px;
+          }
+        }
+
+        p {
+          font-size: 1.3rem;
+          letter-spacing: 3px;
+          margin-top: 15px;
+
+          @include mini {
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+
+    .market-events-container {
+      position: relative;
+      margin-top: 50px;
+      margin-bottom: 150px;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      text-align: center;
+      /*border: 1px dashed $black;*/
+      background: linear-gradient(90deg, black 70%, transparent 30%),
+        linear-gradient(90deg, black 70%, transparent 30%),
+        linear-gradient(0deg, black 70%, transparent 30%),
+        linear-gradient(0deg, black 70%, transparent 30%);
+      background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+      background-size: 30px 1px, 30px 1px, 0px 30px, 0px 30px;
+      background-position: 0% 0%, 100% 100%, 0% 100%, 100% 0px;
+      border-radius: 0px;
+      animation: dash 35s linear infinite;
+
+      @include laptop {
+        margin-right: 0;
+        flex-direction: column;
+      }
+
+      a {
+        text-decoration: none;
+        color: $black;
+        padding: 5rem 3rem;
+        flex-basis: 100%;
+
+        @include mini {
+          padding: 3.5rem 3rem;
+        }
+
+        small {
+          display: inline-block;
+          margin-bottom: 15px;
+        }
+
+        p {
+          font-weight: 500;
+          font-size: 1.1rem;
+        }
+      }
+
+      #events-button {
+        position: absolute;
+        bottom: -13%;
+        z-index: 5;
+        background: $white;
+        padding: 1.1rem 3rem;
+        border: 1px solid $black;
+        font-weight: 500;
+        transition: all 250ms ease;
+        letter-spacing: 3px;
+
+        @include phone {
+          bottom: -7%;
+        }
+
+        &:hover {
+          background: $black !important;
+          color: $white;
+          transition: all 250ms ease;
+        }
+      }
+
+      .market-events-border-container {
+        position: absolute;
+        background: linear-gradient(90deg, black 70%, transparent 30%),
+          linear-gradient(90deg, black 70%, transparent 30%),
+          linear-gradient(0deg, black 70%, transparent 30%),
+          linear-gradient(0deg, black 70%, transparent 30%);
+        background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+        background-size: 30px 1px, 30px 1px, 0px 30px, 0px 30px;
+        background-position: 0% 0%, 100% 100%, 0% 100%, 100% 0px;
+        border-radius: 0px;
+        animation: dash 35s linear infinite;
+
+        width: 100%;
+        height: 110%;
+      }
+    }
+
+    .becoming-a-vendor {
+      overflow-x: hidden;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      margin-bottom: 50px;
+
+      p {
+        color: rgb(0, 0, 0);
+        font-weight: 300;
+        opacity: 0.3 !important;
+        pointer-events: none;
+      }
+
+      h1 {
+        padding-top: 5rem;
+        text-align: center;
+        font-size: 3rem;
+        font-weight: 400;
+
+        @include mini {
+          font-size: 2rem;
+          padding-top: 1rem;
+        }
+      }
+
+      .vendor-becoming-button {
+        background: transparent;
+        color: $black;
+        border: 1px solid $black;
+        padding: 1.1rem 3rem;
+        margin-bottom: 5rem;
+        text-align: center;
+        width: 200px;
+        margin: 2rem auto 3rem auto;
+        cursor: pointer;
+        transition: all 250ms ease;
+        font-weight: 500;
+        font-size: 1.1rem;
+
+        @include mini {
+          margin: 1rem auto;
+          width: 100%;
+        }
+
+        &:hover {
+          background: $black;
+          color: $white;
+          transition: all 250ms ease;
+        }
+      }
+    }
+
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      text-align: center;
+      grid-gap: 50px;
+      margin-bottom: 50px;
+      height: 100%;
+
+      @include mini {
+        grid-template-columns: 1fr;
+      }
+
+      a {
+        text-decoration: none;
+        color: $black;
+        /*border: 1px dashed $black;*/
+        padding: 4rem 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, black 70%, transparent 30%),
+          linear-gradient(90deg, black 70%, transparent 30%),
+          linear-gradient(0deg, black 70%, transparent 30%),
+          linear-gradient(0deg, black 70%, transparent 30%);
+        background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+        background-size: 30px 1px, 30px 1px, 1px 30px, 1px 30px;
+        background-position: 0% 0%, 100% 100%, 0% 100%, 100% 0px;
+        border-radius: 0px;
+
+        @include phone {
+          padding: 2rem 0;
+        }
+
+        &:hover {
+          animation: dash 5s linear infinite;
+        }
+
+        i {
+          font-size: 2rem;
+          margin-bottom: 15px;
+        }
+        p {
+          font-size: 1.1rem;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .newsletter-container {
+      padding: 3rem;
+      margin-bottom: 50px;
+      display: flex;
+      justify-content: space-between;
+      background: linear-gradient(90deg, black 70%, transparent 30%),
+        linear-gradient(90deg, black 70%, transparent 30%),
+        linear-gradient(0deg, black 70%, transparent 30%),
+        linear-gradient(0deg, black 70%, transparent 30%);
+      background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+      background-size: 30px 1px, 30px 1px, 1px 30px, 1px 30px;
+      background-position: 0% 0%, 100% 100%, 0% 100%, 100% 0px;
+      border-radius: 0px;
+
+      @include mini {
+        flex-direction: column;
+      }
+
+      &:hover {
+        animation: dash 10s linear infinite;
+      }
+
+      p {
+        font-weight: 500;
+        font-size: 1.3rem;
+        width: fit-content;
+      }
+
+      .email-container {
+        position: relative;
+        display: flex;
+        height: 70px;
+        min-width: 500px;
+
+        @include mini {
+          margin-top: 20px;
+          min-width: 100%;
+        }
+
+        input {
+          background: transparent;
+          border: 1px solid black;
+          padding: 1rem 1.5rem;
+          height: 70px;
+          font-size: 1.2rem;
+          width: 100%;
+          outline: none;
+          border-radius: 0;
+
+          &::placeholder {
+            color: $black;
+            opacity: 1;
+          }
+        }
+
+        button {
+          position: absolute;
+          background: transparent;
+          right: 0%;
+          width: 50px;
+          height: 20px;
+          border: none;
+          outline: none;
+          cursor: pointer;
+          height: 100%;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 1.3rem;
+        }
+      }
+    }
+
+    .first-footer {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 50px;
+
+      @include mini {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .left-side {
+        display: flex;
+
+        p {
+          @include mini {
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 30px;
+          }
+        }
+
+        a {
+          color: $black;
+
+          @include mini {
+            font-size: 0.9rem;
+          }
+        }
+
+        a:first-of-type {
+          margin: 0 50px;
+
+          @include mini {
+            margin: 0 20px;
+          }
+        }
+      }
+
+      & > a {
+        text-decoration: none;
+        color: $black;
+        font-weight: 500;
+
+        @include mini {
+          font-size: 0.9rem;
+        }
+
+        span {
+          text-decoration-line: line-through;
+        }
+      }
+    }
+
+    .copy-paste-container {
+      position: relative;
+      width: 100%;
+
+      @include mini {
+        width: 100%;
+      }
+    }
+  }
+
+  /* FIRST WHITE SECTION FROM HERE */
+
+  #first {
+    left: 0;
+    animation-delay: 0;
+
+    .market-events-container #events-button {
+      background: $white;
+    }
+
+    /* CONTAINER ONLY WITH IMAGE */
+    .first-row {
+      position: fixed;
+      z-index: 10;
+      top: 0;
+      left: 0;
+
+      @include mini {
+        display: none;
+      }
+      img {
+        width: 3vw;
+        transition: all 500ms ease;
+        margin: 5vh 5vw;
+
+        @include laptop {
+          margin-top: 0 !important;
+        }
+
+        @include mini {
+          width: 8vw;
+        }
+      }
+
+      /* IMAGE THAT ADDS TO ELEMENT WHEN FIRST SECTION IS FOCUSED */
+
+      .expanded-first {
+        margin: 5vh 5vw;
+        width: 3vw;
+
+        @include laptop {
+          margin: 0 5vw !important;
+        }
+
+        @include miniLaptop {
+          width: 6vw;
+        }
+      }
+
+      /* EXPANDED IMAGE THAT ADDS TO ELEMENT WHEN FIRST SECTION IS NOT FOCUSED */
+
+      .not-expanded-first {
+        margin: 5vh 0;
+        width: 3vw;
+        text-align: center;
+
+        @include laptop {
+          width: 6vw;
+          margin: 0;
+        }
+      }
+    }
+
+    /* THIS DIV CONTAINS EVERYTHING FROM FIRST WHITE SECTION */
+
+    .second-row {
+      padding-left: 2.5vw;
+      padding-top: 0%;
+      opacity: 0;
+      pointer-events: all;
+      transition: opacity 500ms ease;
+      width: 86vw !important;
+
+      @include mini {
+        padding-left: 0;
+        padding-top: 100px;
+      }
+
+      /* FIRST TEXT ON WHITE SECTION */
+
+      & > h1 {
+        font-weight: 400;
+        font-size: 4.3rem;
+        width: 85%;
+        text-align: left;
+
+        @include laptop {
+          margin-top: 0;
+          font-size: 3rem;
+        }
+
+        @include mini {
+          font-size: 2rem;
+          width: 100%;
+        }
+
+        a {
+          text-decoration: none;
+          color: $black;
+          background: linear-gradient(-135deg, $yellow 5px, transparent 0) 0 5px,
+            linear-gradient(135deg, $yellow 5px, #fff 0) 0 5px;
+          background-color: $yellow;
+          background-position: left bottom;
+          background-repeat: repeat-x;
+          background-size: 10px 10px;
+        }
+      }
+
+      /* BIG BACKGROUND IMAGE BELOW FIRST TEXT */
+
+      .background {
+        width: 90vw;
+        height: 120vh;
+        background: url("https://kosserin.github.io/about-street-market/assets/header.jpg")
+          no-repeat center;
+        background-size: cover;
+        position: relative;
+        left: -5vw;
+        margin-top: 150px;
+
+        @include laptop {
+          margin-top: 100px;
+          height: 50vh;
+          width: 100%;
+        }
+
+        @include mini {
+          width: 100%;
+          left: 0;
+        }
+      }
+
+      /* TITLE OF MARKET CARDS (A NEW KIND OF MARKET) */
+
+      .heading-title {
+        margin-top: 10vh;
+        margin-bottom: 50px;
+
+        h1 {
+          font-size: 7rem;
+          font-weight: 500;
+          text-align: left;
+
+          @include laptop {
+            font-size: 4rem;
+          }
+
+          @include mini {
+            font-size: 3rem;
+          }
+        }
+      }
+
+      /* A NEW KIND OF MARKET CARDS, GRID FOR THOSE 3 CARDS */
+
+      .cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 50px;
+        padding-bottom: 200px;
+
+        @include mini {
+          grid-template-columns: 1fr;
+        }
+
+        .card {
+          .image-card {
+            width: 100%;
+            height: 600px;
+
+            @include miniLaptop {
+              height: 300px;
+            }
+          }
+
+          #first-image-card {
+            background: url("https://kosserin.github.io/about-street-market/assets/8f74dfabde9ebd66d0d078ba6cf794c77dc8ac5b_home_page_one.webp")
+              no-repeat center;
+            background-size: cover;
+          }
+
+          #second-image-card {
+            background: url("https://kosserin.github.io/about-street-market/assets/20c7997073b456fda0e6de872d23b6183892bdde_home_page_two.webp")
+              no-repeat center;
+            background-size: cover;
+          }
+
+          #third-image-card {
+            background: url("https://kosserin.github.io/about-street-market/assets/13a988aff3e9c672350fe8330eb7386c3a85eeb9_home_page_three.webp")
+              no-repeat center;
+            background-size: cover;
+          }
+
+          p:first-of-type {
+            margin-top: 20px;
+          }
+
+          p {
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 3px;
+            margin-top: 5px;
+            text-align: left;
+          }
+        }
+      }
+
+      /* HEADLINE WITH LETTERS AND HEADING TEXT */
+
+      .market-events {
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: space-evenly;
+
+        @include miniLaptop {
+          flex-direction: column;
+        }
+
+        /* LETTERS */
+
+        .market-letters {
+          font-size: 4rem;
+          color: $black;
+          -webkit-text-fill-color: transparent;
+          -webkit-text-stroke-width: 1px;
+        }
+
+        /* HEADING TEXT */
+
+        .market-title h1 {
+          font-size: 6rem;
+          font-weight: 400;
+          line-height: 90px;
+
+          @include miniLaptop {
+            font-size: 3rem;
+            line-height: 60px;
+          }
+
+          @include mini {
+            font-weight: 600;
+          }
+        }
+      }
+
+      /* DIV THAT CONTAINS TWO MAP ITEMS */
+
+      .maps-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 50px;
+        min-height: 350px;
+        margin-bottom: 150px;
+        width: 100%;
+
+        @include miniLaptop {
+          grid-template-columns: 1fr;
+        }
+
+        @include mini {
+          margin-right: 0;
+          margin-bottom: 50px;
+        }
+
+        a {
+          width: 100%;
+          /*border: 1px dashed $black;*/
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          text-decoration: none;
+          color: $black;
+          background: linear-gradient(90deg, black 70%, transparent 30%),
+            linear-gradient(90deg, black 70%, transparent 30%),
+            linear-gradient(0deg, black 70%, transparent 30%),
+            linear-gradient(0deg, black 70%, transparent 30%);
+          background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+          background-size: 30px 1px, 30px 1px, 1px 30px, 1px 30px;
+          background-position: 0% 0%, 100% 100%, 0% 100%, 100% 0px;
+          border-radius: 0px;
+          padding: 5px;
+
+          &:hover {
+            animation: dash 5s linear infinite;
+          }
+
+          /* TEXT FROM FIRST ONE */
+
+          p {
+            font-size: 4rem;
+
+            @include miniLaptop {
+              font-size: 3rem;
+              padding: 1rem 0;
+            }
+
+            @include phone {
+              font-size: 2rem;
+            }
+          }
+
+          /* IMAGE FROM SECOND ONE */
+
+          img {
+            width: 100%;
+            height: 350px;
+
+            @include phone {
+              height: 200px;
+            }
+          }
+        }
+      }
+    }
+
+    /*  .expanded-text {
+      padding-left: 5vw;
+      padding-top: 20vh;
+      opacity: 1;
+      pointer-events: all;
+      width: fit-content;
+      height: fit-content;
+    }
+
+    .not-expanded-text {
+      opacity: 0;
+      pointer-events: none;
+      width: 0;
+      height: 0;
+    }*/
+  }
+
+  #first.focused .second-row {
+    opacity: 1;
+    transition: opacity 5000ms ease;
+  }
+
+  /* SECOND SECTION */
+
+  #second {
+    background: $blue;
+    left: 91vw;
+    animation-delay: 1s;
+
+    @include laptop {
+      left: 82vw;
+    }
+
+    .image-worktime {
+      background: url("https://kosserin.github.io/about-street-market/assets/13a988aff3e9c672350fe8330eb7386c3a85eeb9_home_page_three.webp")
+        no-repeat center;
+      background-size: cover;
+    }
+
+    @include mini {
+      left: 0;
+    }
+  }
+
+  /* THIRD SECTION */
+
+  #third {
+    background: $pink;
+    left: 94vw;
+    animation-delay: 0.5s;
+
+    @include laptop {
+      left: 88vw;
+    }
+
+    @include mini {
+      left: 0;
+    }
+
+    .image-worktime {
+      background: url("https://kosserin.github.io/about-street-market/assets/20c7997073b456fda0e6de872d23b6183892bdde_home_page_two.webp")
+        no-repeat center;
+      background-size: cover;
+    }
+  }
+
+  /* FOURTH SECTION */
+
+  #fourth {
+    background: $yellow;
+    left: 97vw;
+    animation-delay: 0;
+
+    @include laptop {
+      left: 94vw;
+    }
+
+    @include mini {
+      left: 0;
+    }
+
+    .image-worktime {
+      background: url("https://kosserin.github.io/about-street-market/assets/8f74dfabde9ebd66d0d078ba6cf794c77dc8ac5b_home_page_one.webp")
+        no-repeat center;
+      background-size: cover;
+    }
+
+    .community-features {
+      text-align: left;
+
+      @include laptop {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      & > h1 {
+        font-size: 6rem;
+        font-weight: 400;
+
+        @include phone {
+          font-size: 3.5rem;
+        }
+      }
+
+      .features-grid {
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 150px;
+        grid-column-gap: 50px;
+        margin-bottom: 150px;
+
+        @include tablet {
+          grid-template-columns: 1fr;
+        }
+
+        a {
+          position: relative;
+          text-decoration: none;
+          color: $black;
+          height: 500px;
+
+          @include mini {
+            height: 300px;
+          }
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+
+          h1 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transform: translate(5%, 50%);
+            font-size: 2.5rem;
+            background: $white;
+            padding: 0.5rem;
+            width: 90%;
+          }
+        }
+      }
+
+      .button-container {
+        width: 100%;
+        position: relative;
+
+        @include mini {
+          transform: translateX(0);
+        }
+      }
+    }
+
+    .button-container {
+      margin-top: 50px;
+      margin-bottom: 150px;
+      display: flex;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+
+      @include mini {
+        margin: 50px 0 150px 0vw;
+      }
+
+      a {
+        display: inline-block;
+        text-decoration: none;
+        color: $black;
+        border: 1px solid $black;
+        width: 100%;
+        padding: 1.3rem 0;
+        transition: all 250ms ease;
+
+        &:hover {
+          background: $black;
+          color: $white;
+          transition: all 250ms ease;
+        }
+      }
+    }
+
+    .copy-paste-container {
+      width: 100%;
+    }
+
+    .market-events-container #events-button {
+      background: $yellow;
+    }
+
+    .market-events-container {
+      margin-left: 5vw;
+
+      @include miniLaptop {
+        margin-left: 0;
+      }
+    }
+
+    .second-happy-hour #right-smile {
+      animation: notRotatedIcon 2s linear 2s infinite alternate;
+    }
+
+    .slashes {
+      margin-left: 5vw;
+      display: grid;
+      grid-template-areas: "p d t c";
+      overflow-x: hidden;
+      grid-gap: 50px;
+      margin-right: 11vw;
+
+      @include laptop {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .slash {
+        overflow-x: hidden;
+        color: rgb(0, 0, 0);
+        font-weight: 300;
+        opacity: 0.3 !important;
+        pointer-events: none;
+      }
+
+      .slash:first-of-type {
+        grid-area: p;
+      }
+
+      .slash:nth-of-type(2) {
+        grid-area: d;
+      }
+
+      .slash:nth-of-type(3) {
+        grid-area: t;
+      }
+
+      .slash:last-of-type {
+        grid-area: c;
+      }
+    }
+
+    .community-market-events {
+      position: relative;
+
+      height: 200px;
+      display: grid;
+      justify-content: space-between;
+      align-content: space-between;
+      grid-template-areas:
+        "a b c"
+        "d b e";
+
+      @include laptop {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      @include mini {
+        min-height: fit-content;
+        height: fit-content;
+        grid-template-areas:
+          "b b b"
+          "a a a"
+          "c c c"
+          "d d d"
+          "e e e";
+      }
+
+      h1 {
+        grid-area: b;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        font-size: 4rem;
+        margin: 0 auto;
+        font-weight: 400;
+
+        @include mini {
+          position: absolute;
+          top: -250px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+
+      .events-container:first-of-type {
+        grid-area: a;
+      }
+
+      .events-container:nth-of-type(2) {
+        grid-area: c;
+      }
+
+      .events-container:nth-of-type(3) {
+        grid-area: d;
+      }
+
+      .events-container:last-of-type {
+        grid-area: e;
+      }
+
+      .events-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        @include mini {
+          padding: 40px 0;
+        }
+
+        a {
+          text-decoration: none;
+          color: $black;
+          font-size: 1.1rem;
+          margin-top: 10px;
+        }
+      }
+
+      .slash-container {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 23%;
+        overflow-x: hidden;
+        color: rgb(0, 0, 0);
+        font-weight: 300;
+        opacity: 0.3 !important;
+        pointer-events: none;
+      }
+
+      #left-mid-slashes {
+        left: 0;
+        text-align: left;
+      }
+
+      #right-mid-slashes {
+        right: 0;
+        text-align: right;
+      }
+    }
+
+    #above-slashes {
+      margin-top: 150px;
+      padding-bottom: 50px;
+
+      @include miniLaptop {
+        margin-top: 600px;
+      }
+
+      @include mini {
+        margin-top: 900px;
+      }
+
+      @include phone {
+        margin-top: 700px;
+      }
+    }
+
+    #under-slashes {
+      padding-top: 50px;
+    }
+  }
+
+  /* FOCUSED SECTION */
+
+  section.focused {
+    position: relative;
+    min-height: 100vh;
+    width: 91vw;
+    cursor: auto;
+    transition: all 1000ms ease;
+    opacity: 1;
+
+    @include laptop {
+      width: 100%;
+    }
+
+    @include mini {
+      width: 100vw;
+      display: block;
+    }
+
+    .section-container {
+      opacity: 1;
+      pointer-events: all;
+      width: 90%;
+      height: fit-content;
+      transition: opacity 3000ms ease;
+
+      @include mini {
+        width: 100%;
+      }
+    }
+  }
+
+  #first.focused {
+    @include laptop {
+      width: 80vw;
+    }
+
+    @include mini {
+      width: 100%;
+    }
+  }
+
+  #second .section-container,
+  #third .section-container {
+    @include laptop {
+      left: -5vw;
+      width: 70vw;
+    }
+
+    @include miniLaptop {
+      left: -10vw;
+    }
+
+    @include mini {
+      width: 100%;
+      left: 0;
+    }
+  }
+
+  /* CLICKING ONE SECTION AFFECT ON */
+
+  #fourth.second-clicked {
+    left: 97vw;
+
+    @include laptop {
+      left: 94vw;
+    }
+  }
+
+  #fourth.third-clicked {
+    left: 97vw;
+
+    @include laptop {
+      left: 94vw;
+    }
+  }
+
+  #fourth.fourth-clicked {
+    left: 9vw;
+
+    @include laptop {
+      left: 18vw;
+    }
+  }
+
+  #first.second-clicked {
+    left: 0;
+  }
+
+  #first.third-clicked {
+    left: 0;
+  }
+
+  #first.fourth-clicked {
+    left: 0;
+  }
+
+  #second.second-clicked {
+    left: 3vw;
+
+    @include laptop {
+      left: 6vw;
+    }
+  }
+
+  #second.third-clicked {
+    left: 3vw;
+
+    @include laptop {
+      left: 6vw;
+    }
+  }
+
+  #second.fourth-clicked {
+    left: 3vw;
+
+    @include laptop {
+      left: 6vw;
+    }
+  }
+
+  #third.second-clicked {
+    left: 94vw;
+
+    @include laptop {
+      left: 88vw;
+    }
+  }
+
+  #third.third-clicked {
+    left: 6vw;
+
+    @include laptop {
+      left: 12vw;
+    }
+  }
+
+  #third.fourth-clicked {
+    left: 6vw;
+
+    @include laptop {
+      left: 12vw;
+    }
+  }
+
+  #fourth .section-container {
+    @include laptop {
+      left: -4vw;
+      width: 70vw;
+    }
+
+    @include miniLaptop {
+      left: -10vw;
+    }
+
+    @include mini {
+      left: 0;
+      width: 100%;
+    }
+  }
+
+  #fourth .section-first-container {
+    @include miniLaptop {
+      height: 500px;
+    }
+  }
+
+  /* END OF HEADER */
+}
+
+/* COPY-PASTED BOTTOM PART OF WHITE SECTION  */
+
+@keyframes dash {
+  to {
+    background-position: 100% 0%, 0% 100%, 0% 0%, 100% 100%;
+  }
+}
+
+@keyframes show {
+  to {
+    opacity: 1;
+    min-height: 100vh;
+  }
+}
+
+@keyframes leftSmile {
+  from {
+    transform: translateY(-20%);
+  }
+  to {
+    transform: translateY(20%);
+  }
+}
+
+@keyframes rightSmile {
+  from {
+    transform: rotate(180deg) translateY(20%);
+  }
+  to {
+    transform: rotate(180deg) translateY(-20%);
+  }
+}
+
+@keyframes notRotatedIcon {
+  from {
+    transform: translateY(20%);
+  }
+  to {
+    transform: translateY(-20%);
+  }
+}
