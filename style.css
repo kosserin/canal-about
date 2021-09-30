@@ -933,7 +933,7 @@ header #first .second-row > h1 a {
 header #first .second-row .background {
   width: 90vw;
   height: 120vh;
-  background: url("https://kosserin.github.io/about-street-market/assets/header.jpg") no-repeat center;
+  background: url("https://kosserin.github.io/canal-about/assets/header.jpg") no-repeat center;
   background-size: cover;
   position: relative;
   left: -5vw;
@@ -1006,17 +1006,17 @@ header #first .second-row .cards .card .image-card {
 }
 
 header #first .second-row .cards .card #first-image-card {
-  background: url("https://kosserin.github.io/about-street-market/assets/8f74dfabde9ebd66d0d078ba6cf794c77dc8ac5b_home_page_one.webp") no-repeat center;
+  background: url("https://kosserin.github.io/canal-about/assets/8f74dfabde9ebd66d0d078ba6cf794c77dc8ac5b_home_page_one.webp") no-repeat center;
   background-size: cover;
 }
 
 header #first .second-row .cards .card #second-image-card {
-  background: url("https://kosserin.github.io/about-street-market/assets/20c7997073b456fda0e6de872d23b6183892bdde_home_page_two.webp") no-repeat center;
+  background: url("https://kosserin.github.io/canal-about/assets/20c7997073b456fda0e6de872d23b6183892bdde_home_page_two.webp") no-repeat center;
   background-size: cover;
 }
 
 header #first .second-row .cards .card #third-image-card {
-  background: url("https://kosserin.github.io/about-street-market/assets/13a988aff3e9c672350fe8330eb7386c3a85eeb9_home_page_three.webp") no-repeat center;
+  background: url("https://kosserin.github.io/canal-about/assets/13a988aff3e9c672350fe8330eb7386c3a85eeb9_home_page_three.webp") no-repeat center;
   background-size: cover;
 }
 
@@ -1189,7 +1189,7 @@ header #second {
 }
 
 header #second .image-worktime {
-  background: url("https://kosserin.github.io/about-street-market/assets/13a988aff3e9c672350fe8330eb7386c3a85eeb9_home_page_three.webp") no-repeat center;
+  background: url("https://kosserin.github.io/canal-about/assets/13a988aff3e9c672350fe8330eb7386c3a85eeb9_home_page_three.webp") no-repeat center;
   background-size: cover;
 }
 
@@ -1219,7 +1219,7 @@ header #third {
 }
 
 header #third .image-worktime {
-  background: url("https://kosserin.github.io/about-street-market/assets/20c7997073b456fda0e6de872d23b6183892bdde_home_page_two.webp") no-repeat center;
+  background: url("https://kosserin.github.io/canal-about/assets/20c7997073b456fda0e6de872d23b6183892bdde_home_page_two.webp") no-repeat center;
   background-size: cover;
 }
 
@@ -1243,7 +1243,7 @@ header #fourth {
 }
 
 header #fourth .image-worktime {
-  background: url("https://kosserin.github.io/about-street-market/assets/8f74dfabde9ebd66d0d078ba6cf794c77dc8ac5b_home_page_one.webp") no-repeat center;
+  background: url("https://kosserin.github.io/canal-about/assets/8f74dfabde9ebd66d0d078ba6cf794c77dc8ac5b_home_page_one.webp") no-repeat center;
   background-size: cover;
 }
 
