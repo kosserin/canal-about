@@ -90,7 +90,6 @@ const sectionClicker = () =>{
                 })
                 e.currentTarget.classList.add('focused');
                 window.scrollTo({ top: 0, behavior: 'smooth'});
-                console.log(e.currentTarget.id)
                 if(e.currentTarget.id === 'first'){
                     sections.forEach(section =>{
                         section.classList.remove('second-clicked');
@@ -124,13 +123,9 @@ const sectionClicker = () =>{
           if(e.currentTarget.id!='first'){
                logo.classList.remove('expanded-first');
                logo.classList.add('not-expanded-first');
-               secondRow.classList.remove('expanded-text');
-               secondRow.classList.add('not-expanded-text');
             } else{
              logo.classList.remove('not-expanded-first');
              logo.classList.add('expanded-first');
-             secondRow.classList.add('expanded-text');
-             secondRow.classList.remove('not-expanded-text');
             }
             }
 
