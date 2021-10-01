@@ -319,6 +319,10 @@ header {
         flex-direction: column;
       }
 
+      @include mini {
+        animation-duration: 10s;
+      }
+
       a {
         text-decoration: none;
         color: $black;
@@ -373,9 +377,12 @@ header {
         background-position: 0% 0%, 100% 100%, 0% 100%, 100% 0px;
         border-radius: 0px;
         animation: dash 35s linear infinite;
-
         width: 100%;
         height: 110%;
+
+        @include mini {
+          animation-duration: 10s;
+        }
       }
     }
 
@@ -690,9 +697,15 @@ header {
       transition: opacity 500ms ease;
       width: 86vw !important;
 
+      @include miniLaptop {
+        padding-left: 5vw;
+        width: 80vw !important;
+      }
+
       @include mini {
         padding-left: 0;
         padding-top: 100px;
+        width: 86vw !important;
       }
 
       /* FIRST TEXT ON WHITE SECTION */
@@ -1472,6 +1485,15 @@ header {
 
   /* END OF HEADER */
 }
+
+/* .header-background {
+  pointer-events: none;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  position: absolute;
+  z-index: 205;
+} */
 
 /* COPY-PASTED BOTTOM PART OF WHITE SECTION  */
 

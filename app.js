@@ -9,7 +9,56 @@ const sectionClicker = () =>{
     const burger = document.querySelector('.burger');
     const miniSectionContainer = document.querySelector('.mini-sections');
     const miniSections = document.querySelectorAll('.mini-sections .mini-section');
-    const sectionSpans = document.querySelectorAll('section .section-name')
+    const sectionSpans = document.querySelectorAll('section .section-name');
+    const vendorButton = document.querySelector('.vendor-becoming-button');
+    const vendorPopup = document.querySelector('.vendor-popup');
+    const vendorClose = document.querySelector('.fa-times');
+    const header = document.querySelector('header');
+    const termLength = document.querySelector('#term-length');
+    const foodLengths = document.querySelectorAll('.food-lengths');
+    const retailLengths = document.querySelectorAll('.retail-lengths');
+    var selectBox = document.getElementById("foodretail");
+    const xd = document.getElementById('default-option');
+    selectBox.addEventListener('change', ()=>{
+        var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+        if(selectedValue === 'Retail' || selectedValue === 'Food'){
+            termLength.removeAttribute('disabled');
+        }
+        if(selectedValue === 'Food'){
+            foodLengths.forEach(food =>{
+                food.removeAttribute('disabled');
+                food.removeAttribute('hidden');
+            })
+            retailLengths.forEach(retail =>{
+                retail.setAttribute('disabled', true);
+                retail.setAttribute('hidden', true);
+            })
+        } else if(selectedValue === 'Retail'){
+            retailLengths.forEach(retail =>{
+                retail.removeAttribute('disabled');
+                retail.removeAttribute('hidden');
+            })
+            foodLengths.forEach(food =>{
+                food.setAttribute('disabled', true);
+                food.setAttribute('hidden', true);
+            })
+        }
+    })
+    vendorButton.addEventListener('click', e=>{
+        header.style.pointerEvents='none';
+        burger.classList.add('hide-burger');
+        vendorPopup.classList.add('show-popup');
+        document.querySelector('html').style.overflowY='hidden';
+        vendorPopup.style.overflowY='scroll';
+    })
+    vendorClose.addEventListener('click', () =>{
+        header.style.pointerEvents='all';
+        burger.classList.remove('hide-burger');
+        vendorPopup.classList.remove('show-popup');
+        document.querySelector('html').style.overflowY='scroll';
+    })
+
+
     burger.addEventListener('click', e => {
         miniSectionContainer.classList.toggle('burger-clicked');
         burger.classList.toggle('toggle-burger');

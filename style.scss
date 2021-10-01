@@ -15,6 +15,10 @@ body {
   overflow-x: hidden;
 }
 
-body::-webkit-scrollbar {
+html::-webkit-scrollbar {
+  display: none;
+}
+
+.vendor-popup::-webkit-scrollbar {
   display: none;
 }
