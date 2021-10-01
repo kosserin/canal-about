@@ -344,7 +344,7 @@ header {
         }
       }
 
-      #events-button {
+      .events-button {
         position: absolute;
         bottom: -13%;
         z-index: 5;
@@ -630,7 +630,7 @@ header {
     left: 0;
     animation-delay: 0;
 
-    .market-events-container #events-button {
+    .market-events-container .events-button {
       background: $white;
     }
 
@@ -1135,7 +1135,7 @@ header {
       width: 100%;
     }
 
-    .market-events-container #events-button {
+    .market-events-container .events-button {
       background: $yellow;
     }
 

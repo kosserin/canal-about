@@ -440,7 +440,7 @@ header section .market-events-container a p {
   font-size: 1.1rem;
 }
 
-header section .market-events-container #events-button {
+header section .market-events-container .events-button {
   position: absolute;
   bottom: -13%;
   z-index: 5;
@@ -454,12 +454,12 @@ header section .market-events-container #events-button {
 }
 
 @media screen and (max-width: 600px) {
-  header section .market-events-container #events-button {
+  header section .market-events-container .events-button {
     bottom: -7%;
   }
 }
 
-header section .market-events-container #events-button:hover {
+header section .market-events-container .events-button:hover {
   background: #000 !important;
   color: #fff;
   -webkit-transition: all 250ms ease;
@@ -824,7 +824,7 @@ header #first {
     }*/
 }
 
-header #first .market-events-container #events-button {
+header #first .market-events-container .events-button {
   background: #fff;
 }
 
@@ -1399,7 +1399,7 @@ header #fourth .copy-paste-container {
   width: 100%;
 }
 
-header #fourth .market-events-container #events-button {
+header #fourth .market-events-container .events-button {
   background: #ffb400;
 }
 
@@ -2388,38 +2388,38 @@ body .vendor-popup form #term-length {
   grid-area: d;
 }
 
-body .vendor-popup form #phone {
+body .vendor-popup form #phone-popup {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: e;
 }
 
-body .vendor-popup form #email {
+body .vendor-popup form #email-popup {
   -ms-grid-row: 3;
   -ms-grid-column: 2;
   grid-area: f;
 }
 
-body .vendor-popup form #instagram {
+body .vendor-popup form #instagram-popup {
   -ms-grid-row: 4;
   -ms-grid-column: 1;
   grid-area: g;
 }
 
-body .vendor-popup form #website {
+body .vendor-popup form #website-popup {
   -ms-grid-row: 4;
   -ms-grid-column: 2;
   grid-area: h;
 }
 
-body .vendor-popup form #link {
+body .vendor-popup form #link-popup {
   -ms-grid-row: 5;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: i;
 }
 
-body .vendor-popup form #textarea {
+body .vendor-popup form #textarea-popup {
   -ms-grid-row: 6;
   -ms-grid-row-span: 2;
   -ms-grid-column: 1;
@@ -2427,7 +2427,7 @@ body .vendor-popup form #textarea {
   grid-area: j;
 }
 
-body .vendor-popup form #submit-button {
+body .vendor-popup form #submit-button-popup {
   -ms-grid-row: 8;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Canal Street Market made by Kosserin">
     <title>About | Canal Street Market</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -117,13 +118,13 @@
                 <option disabled hidden class="food-lengths" value="one-year">1 Year</option>
                 <option disabled hidden class="food-lengths" value="one-plus">1+ Year</option>
             </select>
-            <input type="text" name="phone" id="phone" placeholder="Phone #">
-            <input type="email" name="email" id="email" placeholder="Email">
-            <input type="text" name="instagram" id="instagram" placeholder="Instagram">
-            <input type="text" name="website" id="website" placeholder="Website">
-            <input type="text" name="link" id="link" placeholder="Link a sales or brand deck">
-            <textarea name="textarea" id="textarea" cols="30" rows="10" placeholder="Tell us a little about yourself..."></textarea>
-            <input id="submit-button" type="submit" value="Submit">
+            <input type="text" name="phone" id="phone-popup" placeholder="Phone #">
+            <input type="email" name="email" id="email-popup" placeholder="Email">
+            <input type="text" name="instagram" id="instagram-popup" placeholder="Instagram">
+            <input type="text" name="website" id="website-popup" placeholder="Website">
+            <input type="text" name="link" id="link-popup" placeholder="Link a sales or brand deck">
+            <textarea name="textarea" id="textarea-popup" cols="30" rows="10" placeholder="Tell us a little about yourself..."></textarea>
+            <input id="submit-button-popup" type="submit" value="Submit">
         </form>
     </div>
     <div class="mini-sections">
@@ -146,7 +147,7 @@
             <div class="second-row">
                 <h1>
                     Canal Street Market is a carefully curated retail market, food hall & community space open year-round at 265
-                     Canal Street. <a href="#">Support Small Business</a> this weekend!
+                     Canal Street. <a id="yellow-bordered-tag" href="#">Support Small Business</a> this weekend!
                 </h1>
                 <div class="background"></div>
                 <div class="heading-title">
@@ -194,14 +195,14 @@
                         <small>12/11</small>
                         <p>Hack City 12/11</p>
                     </a>
-                    <a id="events-button" href="#">see all</a>
+                    <a class="events-button" href="#">see all</a>
                 </div>
                 <div class="maps-container">
-                    <a href="#" class="left-map">
+                    <a class="map-item" href="#" id="left-map">
                         <p>265 Canal St.</p>
                         <p>New York, NY</p>
                     </a>
-                    <a href="#" class="right-map">
+                    <a class="map-item" href="#" id="right-map">
                         <img src="./assets/header.jpg" alt="">
                     </a>
                 </div>
@@ -234,7 +235,7 @@
                     </div>
                     <div class="email-container">
                         <input type="email" name="email" id="email" placeholder="Email">
-                        <button type="submit"><i class="fas fa-long-arrow-alt-right"></i></button>
+                        <button  class="email-submit-button" id="first-email-submit-button" type="submit"><i class="fas fa-long-arrow-alt-right"></i></button>
                     </div>
                 </div>
                 <div class="first-footer">
@@ -351,7 +352,7 @@
                         </div>
                         <div class="email-container">
                             <input type="email" name="email" id="email" placeholder="Email">
-                            <button type="submit"><i class="fas fa-long-arrow-alt-right"></i></button>
+                            <button class="email-submit-button" id="second-email-submit-button" type="submit"><i class="fas fa-long-arrow-alt-right"></i></button>
                         </div>
                     </div>
                     <div class="first-footer">
@@ -483,7 +484,7 @@
                     </div>
                     <div class="email-container">
                         <input type="email" name="email" id="email" placeholder="Email">
-                        <button type="submit"><i class="fas fa-long-arrow-alt-right"></i></button>
+                        <button class="email-submit-button" id="third-email-submit-button" type="submit"><i class="fas fa-long-arrow-alt-right"></i></button>
                     </div>
                 </div>
                 <div class="first-footer">
@@ -597,7 +598,7 @@
                         <small>12/11</small>
                         <p>Hack City 12/11</p>
                     </a>
-                    <a id="events-button" href="#">see all</a>
+                    <a class="events-button" href="#">see all</a>
                 </div>
                 <div class="copy-paste-container">
                     <div class="becoming-a-vendor">
@@ -629,7 +630,7 @@
                         </div>
                         <div class="email-container">
                             <input type="email" name="email" id="email" placeholder="Email">
-                            <button type="submit"><i class="fas fa-long-arrow-alt-right"></i></button>
+                            <button class="email-submit-button" id="fourth-email-submit-button" type="submit"><i class="fas fa-long-arrow-alt-right"></i></button>
                         </div>
                     </div>
                     <div class="first-footer">
